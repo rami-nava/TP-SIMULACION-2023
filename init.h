@@ -5,7 +5,7 @@
 // Condiciones iniciales
 int t = 0;  //tiempo actual
 int cm = CANTIDAD_MAQUINAS;    //cantidad de maquinas
-int pmd = 7;    //cantidad trabajadores
+int pmd = CANTIDAD_TRABAJADORES;    //cantidad trabajadores
 int tr[CANTIDAD_MAQUINAS]; //tiempo de reparacion de cada maquina
 int tc[CANTIDAD_TRABAJADORES];  //tiempo comprometido de cada maquina
 double trPor[CANTIDAD_MAQUINAS] = {0.06, 0.12,0.2,0.26,0.33,0.4,0.45,0.51,0.58,0.64,0.7,0.78,0.87,0.93,1}; //porcentajes de rotura de maquina

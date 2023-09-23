@@ -17,37 +17,78 @@ double generarRandom(){
 //intervalo entre averios
 double ia(){
 
-    double R=0;
+    double R=1;
     double IA=-1;
 
-    while(IA<=0 || IA>=1716){
-        while(R == 0 || R == 1){
-            R = generarRandom();
-        }
-        IA = 28.89 + 25.095 * tan(M_PI*(R - 0.5));
-        //reseteo R
-        R=0;
-    }
-
+    while(R == 1){  //no puede ser 1
+        R = generarRandom();
+    }   //la cuenta esta acotada en los valores reales, aprox 20-200
+    IA = 220.67*(pow(1-R, -0.22263285)-1);
+    
     return IA;
 }
 
 //REPARACION FALLO DE MAQUINA
 double drbd(){
-    //cargar FDP
-    return generarRandom()*2000;
+
+    double R=1;
+    double DRDB=1081;
+
+    //R demasiado cercano a 1 tiende a infinito, 18hs=1080mins es el valor mayor
+    while(DRDB>1080){
+
+        while(R == 1){  //no puede ser 1
+            R = generarRandom();
+        } 
+        //valores en 2-6 y 20-14
+        DRDB = 1.8985*pow((pow((1-R), -3.973299428)-1), 0.3665151737) + 0.46196;
+
+        R=1;//reinicio el random
+    }
+
+    return DRDB;
 }
 
 //REPARACION FUERZA MAYOR
 double drco(){
-    //cargar FDP
-    return generarRandom()*2000;
+    
+    double R=1;
+    double DRCO=1081;
+
+    //R demasiado cercano a 1 tiende a infinito, 18hs=1080mins es el valor mayor
+    while(DRCO>1080){
+
+        while(R == 1){  //no puede ser 1
+            R = generarRandom();
+        } 
+            //valores en 200-400
+        DRCO = 720.57*pow( pow(1/R, 9.36241925) - 1, -0.1466791833);
+
+        R=1;//reinicio el random
+    }
+
+    return DRCO;
 }
 
 //REPARACION MANTENIMIENTO
 double drpm(){
-    //cargar FDP
-    return generarRandom()*2000;
+    double R=1;
+    double DRPM=1081;
+
+    //R demasiado cercano a 1 tiende a infinito, 18hs=1080mins es el valor mayor
+    while(DRPM>1080){
+
+        while(R == 1){  //no puede ser 1
+            R = generarRandom();
+        } 
+
+            //valores en 9-300
+        DRPM = 8.773*pow((pow((1-R), -5.416531253)-1), 0.2798455253) + 0.02631;
+        
+        R=1;//reinicio el random
+    }
+
+    return DRPM;
 }
 
 //devuelve 1 si alguna maquina funciona
