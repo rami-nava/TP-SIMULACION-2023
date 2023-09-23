@@ -13,7 +13,7 @@ int main()
         t = tpa;
 
         //generar siguiente averio
-        double ia_valor = ia()*2000;
+        double ia_valor = ia();
         tpa = t + ia_valor;
 
         //si alguna maquina esta funcionando
@@ -32,6 +32,7 @@ int main()
                 //la maquina tiene tiempo de espera
                 ster = ster + (tc[j] - t);
                 tc[j] = tc[j] + da;
+                printf("hola\n");
             } 
             else {
                 //un empleado la arregla

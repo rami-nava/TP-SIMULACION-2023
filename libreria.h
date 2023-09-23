@@ -1,5 +1,6 @@
 #include <time.h>
 #include <stdlib.h>
+#include <math.h>
 #include "init.h"
 
 //genera random entre 0.0 y 1.0
@@ -11,28 +12,28 @@ double generarRandom(){
     return (double)rand() / RAND_MAX;
 }
 
-//intervalo entre arribos
+//intervalo entre averios
 double ia(){
     //cargar FDP
-    return generarRandom();
+    return generarRandom()*1800;
 }
 
 //REPARACION FALLO DE MAQUINA
 double drbd(){
     //cargar FDP
-    return generarRandom();
+    return generarRandom()*2000;
 }
 
 //REPARACION FUERZA MAYOR
 double drfm(){
     //cargar FDP
-    return generarRandom();
+    return generarRandom()*2000;
 }
 
-//
+//REPARACION MANTENIMIENTO
 double drpm(){
     //cargar FDP
-    return generarRandom();
+    return generarRandom()*2000;
 }
 
 //devuelve 1 si alguna maquina funciona
@@ -61,7 +62,7 @@ int asignarMaquina(){
                 {
                     return i;
                 }else{
-                    i=15;
+                    break;
                 }
             }
         }
@@ -81,7 +82,7 @@ int empleadoDisponible(){
 }
 
 int duracionAverio(){
-    double random = generarRandom(1,100);
+    double random = generarRandom();
     if (random <= 0.83){
         return drbd();
     } else {
