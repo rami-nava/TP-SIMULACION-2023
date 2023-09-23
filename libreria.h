@@ -14,8 +14,20 @@ double generarRandom(){
 
 //intervalo entre averios
 double ia(){
-    //cargar FDP
-    return generarRandom()*1800;
+
+    double R=0;
+    double IA=-1;
+
+    while(IA<=0 || IA>=1716){
+        while(R == 0 || R == 1){
+            R = generarRandom();
+        }
+        IA = 28.89 + 25.095 * tan(M_PI*(R - 0.5));
+        //reseteo R
+        R=0;
+    }
+
+    return IA;
 }
 
 //REPARACION FALLO DE MAQUINA
@@ -25,7 +37,7 @@ double drbd(){
 }
 
 //REPARACION FUERZA MAYOR
-double drfm(){
+double drco(){
     //cargar FDP
     return generarRandom()*2000;
 }
@@ -83,14 +95,14 @@ int empleadoDisponible(){
 
 int duracionAverio(){
     double random = generarRandom();
-    if (random <= 0.83){
+    if (random <= 0.8){
         return drbd();
     } else {
-        if(random <= 0.96){
+        if(random <= 0.93){
             return drpm();
         }
         else {
-            return drfm();
+            return drco();
         }
     }
 }
