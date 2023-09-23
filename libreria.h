@@ -3,12 +3,14 @@
 #include <math.h>
 #include "init.h"
 
+//se inicializa una unica vez, para no obtener el mismo valor siempre
+void inicializarSemilla(){
+     //setear semilla en TIEMPO ACTUAL para rand()
+    srand(time(NULL));
+}
+
 //genera random entre 0.0 y 1.0
 double generarRandom(){
-    
-    //setear semilla en TIEMPO ACTUAL para rand()
-    srand(time(NULL));
-
     return (double)rand() / RAND_MAX;
 }
 

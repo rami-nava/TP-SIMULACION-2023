@@ -2,16 +2,14 @@
 
 #include "libreria.h"
 
-
 int main()
 {
-    
+    inicializarSemilla(); // Inicializar la semilla con el tiempo actual
     inicializarTRyTC();
 
     while (t <= tf){
-        
         t = tpa;
-
+        
         //generar siguiente averio
         double ia_valor = ia();
         tpa = t + ia_valor;
@@ -32,7 +30,6 @@ int main()
                 //la maquina tiene tiempo de espera
                 ster = ster + (tc[j] - t);
                 tc[j] = tc[j] + da;
-                printf("hola\n");
             } 
             else {
                 //un empleado la arregla
@@ -45,13 +42,12 @@ int main()
         }
     }
     
-    
     printf("TF: %i \n", tf);
     printf("T: %i \n", t);
     printf("Porcentaje tiempo ocioso (PTO) : %i\n", (sto*100)/t);
     printf("Promedio de tiempo de espera por reparacion (PTER) : %i\n", ster/ca);
     printf("Promedio de tiempo de averio de las máquinas (PTA) : %i\n", sta/ca);
 
-    
     return 0;
 }
+
