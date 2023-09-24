@@ -125,11 +125,9 @@ int asignarMaquina(){
 }
 
 int empleadoDisponible(){
-    int menor = tc[0];
     int persona = 0;
     for(int j = 1; j < pmd; j++){
-        if(tc[j] < menor){
-            menor = tc[j];
+        if(tc[j] < tc[persona]){
             persona = j;
         }
     }
