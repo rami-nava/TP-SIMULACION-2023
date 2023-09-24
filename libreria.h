@@ -24,10 +24,15 @@ double ia(){
     double R=1;
     double IA=-1;
 
-    while(R == 1){  //no puede ser 1
-        R = generarRandom();
-    }   //la cuenta esta acotada en los valores reales, aprox 20-200
-    IA = 220.67*(pow(1-R, -0.22263285)-1);
+    //El valor debe estar dentro del intervalo
+    while(IA > 1716 || IA < 0){
+        while(R == 1){  //no puede ser 1
+            R = generarRandom();
+        }   //la cuenta esta acotada en los valores reales, aprox 20-200
+        IA = 220.67*(pow(1-R, -0.22263285)-1);
+        
+        R = 1; //reinicio el random
+    }
     
     return IA;
 }
@@ -36,21 +41,21 @@ double ia(){
 double drbd(){
 
     double R=1;
-    double DRDB=1081;
+    double DRBD=1081;
 
-    //R demasiado cercano a 1 tiende a infinito, 18hs=1080mins es el valor mayor
-    while(DRDB>1080){
+    //El valor debe estar dentro del intervalo
+    while(DRBD > 1440 || DRBD < 1){
 
         while(R == 1){  //no puede ser 1
             R = generarRandom();
         } 
         //valores en 2-6 y 20-14
-        DRDB = 1.8985*pow((pow((1-R), -3.973299428)-1), 0.3665151737) + 0.46196;
+        DRBD = 1.8985*pow((pow((1-R), -3.973299428)-1), 0.3665151737) + 0.46196;
 
         R=1;//reinicio el random
     }
 
-    return DRDB;
+    return DRBD;
 }
 
 //REPARACION FUERZA MAYOR
@@ -59,8 +64,8 @@ double drco(){
     double R=1;
     double DRCO=1081;
 
-    //R demasiado cercano a 1 tiende a infinito, 18hs=1080mins es el valor mayor
-    while(DRCO>1080){
+    //El valor debe estar dentro del intervalo
+    while(DRCO > 1380 || DRCO < 2){
 
         while(R == 1){  //no puede ser 1
             R = generarRandom();
@@ -79,8 +84,8 @@ double drpm(){
     double R=1;
     double DRPM=1081;
 
-    //R demasiado cercano a 1 tiende a infinito, 18hs=1080mins es el valor mayor
-    while(DRPM>1080){
+    //El valor debe estar dentro del intervalo
+    while(DRPM > 1440 || DRPM < 1){
 
         while(R == 1){  //no puede ser 1
             R = generarRandom();
