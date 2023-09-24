@@ -54,7 +54,7 @@ int main()
     
     printf("TF: %u \n", tf);
     printf("T: %u \n", t);
-    printf("Porcentaje tiempo ocioso (PTO) : %u\n", (sto*100)/t);
+    printf("Sumatoria de tiempo ocioso (STO) : %f\n", sto);
     printf("Promedio de tiempo de espera por reparacion (PTER) : %u\n", ster/ca);
     printf("Promedio de tiempo de averio de las máquinas (PTA) : %u\n", sta/ca);
     line();
