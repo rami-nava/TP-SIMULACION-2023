@@ -1,0 +1,53 @@
+CONDICIONES:
+-> Cantidad de Meses = 12
+-> Cantidad de Minutos = 518400
+
+Caso 1: 4 empleados de mantenimiento
+        TF: 518400 
+        T: 518447 
+        Porcentaje tiempo ocioso (PTO) : 0
+        Promedio de tiempo de espera por reparacion (PTER) : 2845
+        Promedio de tiempo de averio de las máquinas (PTA) : 3926
+
+Caso 2: 5 empleados de mantenimiento
+        TF: 518400 
+        T: 518971 
+        Porcentaje tiempo ocioso (PTO) : 0
+        Promedio de tiempo de espera por reparacion (PTER) : 2000
+        Promedio de tiempo de averio de las máquinas (PTA) : 3081
+
+
+Caso 3: 6 empleados de mantenimiento
+        TF: 518400 
+        T: 518401 
+        Porcentaje tiempo ocioso (PTO) : 0
+        Promedio de tiempo de espera por reparacion (PTER) : 1445
+        Promedio de tiempo de averio de las máquinas (PTA) : 2526
+
+Caso 4: 7 empleados de mantenimiento
+        TF: 518400 
+        T: 518660 
+        Porcentaje tiempo ocioso (PTO) : 0
+        Promedio de tiempo de espera por reparacion (PTER) : 1070
+        Promedio de tiempo de averio de las máquinas (PTA) : 2151
+
+Caso 5: 8 empleados de mantenimiento
+        TF: 518400 
+        T: 518431 
+        Porcentaje tiempo ocioso (PTO) : 1
+        Promedio de tiempo de espera por reparacion (PTER) : 788
+        Promedio de tiempo de averio de las máquinas (PTA) : 1869
+
+Caso 6: 9 empleados de mantenimiento
+        TF: 518400 
+        T: 518493 
+        Porcentaje tiempo ocioso (PTO) : 2
+        Promedio de tiempo de espera por reparacion (PTER) : 584
+        Promedio de tiempo de averio de las máquinas (PTA) : 1665
+
+Caso 7: 10 empleados de mantenimiento
+        TF: 518400 
+        T: 518418 
+        Porcentaje tiempo ocioso (PTO) : 12
+        Promedio de tiempo de espera por reparacion (PTER) : 381
+        Promedio de tiempo de averio de las máquinas (PTA) : 1462
