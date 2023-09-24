@@ -3,6 +3,10 @@
 #include <math.h>
 #include "init.h"
 
+void line(){
+    printf("---------------------------------------\n");
+}
+
 //se inicializa una unica vez, para no obtener el mismo valor siempre
 void inicializarSemilla(){
      //setear semilla en TIEMPO ACTUAL para rand()

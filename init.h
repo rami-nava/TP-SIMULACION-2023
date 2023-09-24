@@ -1,15 +1,14 @@
-#define CANTIDAD_TRABAJADORES 7
 
 #define CANTIDAD_MAQUINAS 15
 
 // Condiciones iniciales
-int t = 0;  //tiempo actual
+unsigned int t = 0;  //tiempo actual
 int cm = CANTIDAD_MAQUINAS;    //cantidad de maquinas
-int pmd = CANTIDAD_TRABAJADORES;    //cantidad trabajadores
+int pmd;    //cantidad trabajadores
 int tr[CANTIDAD_MAQUINAS]; //tiempo de reparacion de cada maquina
-int tc[CANTIDAD_TRABAJADORES];  //tiempo comprometido de cada maquina
+int *tc;  //vector tiempo comprometido de cada maquina
 double trPor[CANTIDAD_MAQUINAS] = {0.06, 0.12,0.2,0.26,0.33,0.4,0.45,0.51,0.58,0.64,0.7,0.78,0.87,0.93,1}; //porcentajes de rotura de maquina
-int tf = 43200; //tiempo final
+unsigned int tf; //tiempo final
 int tpa = 0; 
 int sto = 0;
 int ster = 0;
@@ -20,13 +19,41 @@ int pto = 0;
 int pter = 0;
 int pta = 0;
 
-void inicializarTRyTC(){
+void pedirTF(){
+    int tf_meses;
+    
+    printf("Meses a simular (max~99.420): ");    //unsigned int 4 bytes
+    scanf("%d", &tf_meses);
+
+    getchar();  //limpiar buffer de \n basura
+
+    tf = 43200*tf_meses;
+}
+
+void pedirPMD(){
+
+    printf("Cantidad de trabajadores: ");
+    scanf("%d", &pmd);
+
+    getchar();  //limpiar buffer de \n basura
+}
+
+void inicializarTC(){
+
+    //reservar espacio para el vector
+    tc = (int*)malloc(pmd*sizeof(int));
+
+    //inicializar los 'pmd' tiempos comprometidos en cero
+    for (int i = 0; i<pmd; i++){
+        tc[i] = 0;
+    }
+
+}
+
+void inicializarTR(){
     // Inicializo vector en 0
     for (int i = 0; i<CANTIDAD_MAQUINAS; i++){
         tr[i] = 0;
     }
     
-    for (int i = 0; i<CANTIDAD_TRABAJADORES; i++){
-        tc[i] = 0;
-    }
 }
