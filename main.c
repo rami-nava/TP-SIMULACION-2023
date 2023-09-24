@@ -52,13 +52,13 @@ int main()
         }
     }
     
-    printf("TF: %i \n", tf);
-    printf("T: %i \n", t);
-    printf("Porcentaje tiempo ocioso (PTO) : %i\n", (sto*100)/t);
-    printf("Promedio de tiempo de espera por reparacion (PTER) : %i\n", ster/ca);
-    printf("Promedio de tiempo de averio de las máquinas (PTA) : %i\n", sta/ca);
+    printf("TF: %u \n", tf);
+    printf("T: %u \n", t);
+    printf("Porcentaje tiempo ocioso (PTO) : %u\n", (sto*100)/t);
+    printf("Promedio de tiempo de espera por reparacion (PTER) : %u\n", ster/ca);
+    printf("Promedio de tiempo de averio de las máquinas (PTA) : %u\n", sta/ca);
     line();
-    
+
     return 0;
 }
 

@@ -5,23 +5,23 @@
 unsigned int t = 0;  //tiempo actual
 int cm = CANTIDAD_MAQUINAS;    //cantidad de maquinas
 int pmd;    //cantidad trabajadores
-int tr[CANTIDAD_MAQUINAS]; //tiempo de reparacion de cada maquina
-int *tc;  //vector tiempo comprometido de cada maquina
+unsigned int tr[CANTIDAD_MAQUINAS]; //tiempo de reparacion de cada maquina
+unsigned int *tc;  //vector tiempo comprometido de cada maquina
 double trPor[CANTIDAD_MAQUINAS] = {0.06, 0.12,0.2,0.26,0.33,0.4,0.45,0.51,0.58,0.64,0.7,0.78,0.87,0.93,1}; //porcentajes de rotura de maquina
 unsigned int tf; //tiempo final
-int tpa = 0; 
-int sto = 0;
-int ster = 0;
-int sta = 0;
-int ca = 0;
-int da = 0;
-int pto = 0;
-int pter = 0;
-int pta = 0;
+unsigned int tpa = 0; 
+unsigned int sto = 0;
+unsigned int ster = 0;
+unsigned int sta = 0;
+unsigned int ca = 0;
+unsigned int da = 0;
+unsigned int pto = 0;
+unsigned int pter = 0;
+unsigned int pta = 0;
 
 void pedirTF(){
     int tf_meses;
-    
+
     printf("Meses a simular (max~99.420): ");    //unsigned int 4 bytes
     scanf("%d", &tf_meses);
 
