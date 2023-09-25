@@ -29,7 +29,7 @@ double ia(){
         while(R == 1){  //no puede ser 1
             R = generarRandom();
         }   //la cuenta esta acotada en los valores reales, aprox 20-200
-        IA = 220.67*(pow(1-R, -0.22263285)-1);
+        IA = 220.67*(pow((1-R), -0.22263285)-1);
         
         R = 1; //reinicio el random
     }
@@ -67,13 +67,13 @@ double drco(){
     //El valor debe estar dentro del intervalo
     while(DRCO > 1380 || DRCO < 2){
 
-        while(R == 1){  //no puede ser 1
+        while(R == 0 || R == 1){  //no puede ser 0 o 1
             R = generarRandom();
         } 
             //valores en 200-400
         DRCO = 720.57*pow( pow(1/R, 9.36241925) - 1, -0.1466791833);
 
-        R=1;//reinicio el random
+        R=0;//reinicio el random
     }
 
     return DRCO;
