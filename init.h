@@ -2,22 +2,22 @@
 #define CANTIDAD_MAQUINAS 15
 
 // Condiciones iniciales
- double t = 0;  //tiempo actual
+unsigned int t = 0;  //tiempo actual
 int cm = CANTIDAD_MAQUINAS;    //cantidad de maquinas
 int pmd;    //cantidad trabajadores
- double tr[CANTIDAD_MAQUINAS]; //tiempo de reparacion de cada maquina
- double *tc;  //vector tiempo comprometido de cada maquina
+unsigned int tr[CANTIDAD_MAQUINAS]; //tiempo de reparacion de cada maquina
+unsigned int *tc;  //vector tiempo comprometido de cada maquina
 double trPor[CANTIDAD_MAQUINAS] = {0.06, 0.12,0.2,0.26,0.33,0.4,0.45,0.51,0.58,0.64,0.7,0.78,0.87,0.93,1}; //porcentajes de rotura de maquina
- double tf; //tiempo final
- double tpa = 0; 
+unsigned int tf; //tiempo final
+unsigned int tpa = 0; 
 float sto = 0;
- double ster = 0;
- double sta = 0;
- int ca = 0;
- double da = 0;
- double pto = 0;
- double pter = 0;
- double pta = 0;
+unsigned int ster = 0;
+unsigned int sta = 0;
+unsigned int ca = 0;
+unsigned int da = 0;
+unsigned int pto = 0;
+unsigned int pter = 0;
+unsigned int pta = 0;
 
 void pedirTF(){
     int tf_meses;
@@ -41,7 +41,7 @@ void pedirPMD(){
 void inicializarTC(){
 
     //reservar espacio para el vector
-    tc = (double*)malloc(pmd*sizeof(double));
+    tc = (int*)malloc(pmd*sizeof(int));
 
     //inicializar los 'pmd' tiempos comprometidos en cero
     for (int i = 0; i<pmd; i++){

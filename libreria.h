@@ -25,7 +25,7 @@ double ia(){
     double IA=-1;
 
     //El valor debe estar dentro del intervalo
-    while(IA > 975 || IA < 0){
+    while(IA > 2085 || IA < 0){
         while(R == 1){  //no puede ser 1
             R = generarRandom();
         }   //la cuenta esta acotada en los valores reales, aprox 20-200
