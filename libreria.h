@@ -34,7 +34,7 @@ double ia(){
 
         R = 1; //reinicio el random
     }
-    
+
     return IA;
 }
 
@@ -51,8 +51,8 @@ double drbd(){
             R = generarRandom();
         } 
         //valores en 2-6 y 20-14
-        DRBD = 1.8533*pow((pow((1-R), -3.766762091)-1), 0.3781433163) + 0.48705;
-
+        //DRBD = 1.8533*pow((pow((1-R), -3.766762091)-1), 0.3781433163) + 0.48705;
+        DRBD = -2219.3 + 2715.4*pow((pow(R,(-1/0.13863))-1),(-1/112.01));
         R=1;//reinicio el random
     }
 

@@ -52,8 +52,6 @@ int main()
         }
     }
 
-    printf("%i\n",ster);
-    printf("%i\n",sto);
 
     printf("TF: %u \n", tf);
     printf("T: %u \n", t);
