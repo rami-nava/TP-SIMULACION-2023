@@ -25,12 +25,13 @@ double ia(){
     double IA=-1;
 
     //El valor debe estar dentro del intervalo
-    while(IA > 1716 || IA < 0){
+    while(IA > 975 || IA < 0){
         while(R == 1){  //no puede ser 1
             R = generarRandom();
         }   //la cuenta esta acotada en los valores reales, aprox 20-200
-        IA = 220.67*(pow((1-R), -0.22263285)-1);
-        
+       // IA = -2.1076+54.243*(pow((1-R),-0.15691)-1);
+        IA = 53.297/0.17669*(pow((1-R),-0.17669)-1) - 1.8906;
+
         R = 1; //reinicio el random
     }
     
@@ -41,7 +42,7 @@ double ia(){
 double drbd(){
 
     double R=1;
-    double DRBD=1081;
+    double DRBD=1500;
 
     //El valor debe estar dentro del intervalo
     while(DRBD > 1440 || DRBD < 1){
@@ -50,7 +51,7 @@ double drbd(){
             R = generarRandom();
         } 
         //valores en 2-6 y 20-14
-        DRBD = 1.8985*pow((pow((1-R), -3.973299428)-1), 0.3665151737) + 0.46196;
+        DRBD = 1.8533*pow((pow((1-R), -3.766762091)-1), 0.3781433163) + 0.48705;
 
         R=1;//reinicio el random
     }
@@ -62,16 +63,16 @@ double drbd(){
 double drco(){
     
     double R=1;
-    double DRCO=1081;
+    double DRCO=1500;
 
     //El valor debe estar dentro del intervalo
-    while(DRCO > 1380 || DRCO < 2){
+    while(DRCO > 1380 || DRCO < 3){
 
         while(R == 0 || R == 1){  //no puede ser 0 o 1
             R = generarRandom();
         } 
             //valores en 200-400
-        DRCO = 720.57*pow( pow(1/R, 9.36241925) - 1, -0.1466791833);
+        DRCO = 716.22*pow( pow(1/R, 10.01001001) - 1, -0.136592274);
 
         R=0;//reinicio el random
     }
@@ -82,17 +83,17 @@ double drco(){
 //REPARACION MANTENIMIENTO
 double drpm(){
     double R=1;
-    double DRPM=1081;
+    double DRPM=1500;
 
     //El valor debe estar dentro del intervalo
-    while(DRPM > 1440 || DRPM < 1){
+    while(DRPM > 1440 || DRPM < 2){
 
         while(R == 1){  //no puede ser 1
             R = generarRandom();
         } 
 
             //valores en 9-300
-        DRPM = 8.773*pow((pow((1-R), -5.416531253)-1), 0.2798455253) + 0.02631;
+        DRPM = 9.1726*pow((pow((1-R), -4.77486511)-1), 0.2820317568) + 0.1876;
         
         R=1;//reinicio el random
     }

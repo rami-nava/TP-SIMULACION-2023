@@ -11,11 +11,11 @@ double trPor[CANTIDAD_MAQUINAS] = {0.06, 0.12,0.2,0.26,0.33,0.4,0.45,0.51,0.58,0
 unsigned int tf; //tiempo final
 unsigned int tpa = 0; 
 float sto = 0;
-unsigned int ster = 0;
-unsigned int sta = 0;
+unsigned double ster = 0;
+unsigned double sta = 0;
 unsigned int ca = 0;
-unsigned int da = 0;
-unsigned int pto = 0;
+unsigned double da = 0;
+unsigned double pto = 0;
 unsigned int pter = 0;
 unsigned int pta = 0;
 

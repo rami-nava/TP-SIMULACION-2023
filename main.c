@@ -32,7 +32,7 @@ int main()
 
             //tiempo que tarda en volver a funcionar
             int da = duracionAverio();
-            
+
             if(t <= tc[j]){
                 //la maquina tiene tiempo de espera
                 ster = ster + (tc[j] - t);
@@ -51,10 +51,13 @@ int main()
             sta = sta + (tc[j] - t);
         }
     }
-    
+
+    printf("%i\n",ster);
+    printf("%i\n",sto);
+
     printf("TF: %u \n", tf);
     printf("T: %u \n", t);
-    printf("Porcentaje de tiempo ocioso (PTO) : %f\n", sto*100/t);
+    printf("Porcentaje de tiempo ocioso (PTO) : %f\n", (sto/pmd)*100/t);
     printf("Promedio de tiempo de espera por reparacion (PTER) : %u\n", ster/ca);
     printf("Promedio de tiempo de averio de las máquinas (PTA) : %u\n", sta/ca);
     line();
