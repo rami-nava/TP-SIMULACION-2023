@@ -4,13 +4,14 @@
 
 int main()
 {
-    pedirTF();
+    //pedirTF();
     pedirPMD();
-    
+    tf = 43200 * 12;
     line();
 
     inicializarTC();
     inicializarTR();
+    inicializarSTO();
 
     inicializarSemilla(); // Inicializar la semilla con el tiempo actual
 
@@ -40,7 +41,7 @@ int main()
             } 
             else {
                 //un empleado la arregla
-                sto = sto + (t - tc[j]);
+                sto[j] = sto[j] + (t - tc[j]);
                 tc[j] = t + da;
             }
             //una maquina mas arreglada
@@ -55,9 +56,13 @@ int main()
 
     printf("TF: %u \n", tf);
     printf("T: %u \n", t);
-    printf("Porcentaje de tiempo ocioso (PTO) : %f\n", (sto/pmd)*100/t);
+    for (int i = 0; i < pmd; i++)
+    {
+        printf("Porcentaje de tiempo ocioso (PTO) : %f\n", (sto[i]*100/t));
+    }
+    
     printf("Promedio de tiempo de espera por reparacion (PTER) : %u\n", ster/ca);
-    printf("Promedio de tiempo de averio de las máquinas (PTA) : %u\n", sta/ca);
+    printf("Promedio de tiempo de averio de las maquinas (PTA) : %u\n", sta/ca);
     line();
 
     return 0;

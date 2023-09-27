@@ -10,7 +10,7 @@ unsigned int *tc;  //vector tiempo comprometido de cada maquina
 double trPor[CANTIDAD_MAQUINAS] = {0.06, 0.12,0.2,0.26,0.33,0.4,0.45,0.51,0.58,0.64,0.7,0.78,0.87,0.93,1}; //porcentajes de rotura de maquina
 unsigned int tf; //tiempo final
 unsigned int tpa = 0; 
-float sto = 0;
+float *sto;
 unsigned int ster = 0;
 unsigned int sta = 0;
 unsigned int ca = 0;
@@ -56,4 +56,16 @@ void inicializarTR(){
         tr[i] = 0;
     }
     
+}
+
+void inicializarSTO(){
+
+    //reservar espacio para el vector
+    sto = (float*)malloc(pmd*sizeof(float));
+
+    //inicializar los 'pmd' tiempos comprometidos en cero
+    for (int i = 0; i<pmd; i++){
+        sto[i] = 0.0;
+    }
+
 }

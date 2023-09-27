@@ -25,16 +25,14 @@ double ia(){
     double IA=-1;
 
     //El valor debe estar dentro del intervalo
-    while(IA > 2085 || IA < 0){
+    while(IA > 695|| IA < 0){
         while(R == 1){  //no puede ser 1
             R = generarRandom();
         }   //la cuenta esta acotada en los valores reales, aprox 20-200
-       // IA = -2.1076+54.243*(pow((1-R),-0.15691)-1);
-        IA = 53.297/0.17669*(pow((1-R),-0.17669)-1) - 1.8906;
-
+        IA = 67.373/0.32084*(pow((1-R),-0.32084)-1) - 15.465; //gen_pareto
         R = 1; //reinicio el random
     }
-
+    printf("IA: %lf\n", IA);
     return IA;
 }
 
@@ -42,20 +40,18 @@ double ia(){
 double drbd(){
 
     double R=1;
-    double DRBD=1500;
+    double DRBD=0;
 
     //El valor debe estar dentro del intervalo
-    while(DRBD > 1440 || DRBD < 1){
+    while(DRBD > 900 || DRBD < 30){
 
-        while(R == 1){  //no puede ser 1
+        while(R == 1 || R == 0){  //no puede ser 1
             R = generarRandom();
         } 
-        //valores en 2-6 y 20-14
-        //DRBD = 1.8533*pow((pow((1-R), -3.766762091)-1), 0.3781433163) + 0.48705;
-        DRBD = -2219.3 + 2715.4*pow((pow(R,(-1/0.13863))-1),(-1/112.01));
+        DRBD = -2219.3 + 2715.4*pow((pow(R,(-1/0.13863))-1),(-1/112.01)); //dagum 4p
         R=1;//reinicio el random
     }
-
+    printf("DRBD: %lf\n", DRBD);
     return DRBD;
 }
 
@@ -66,13 +62,13 @@ double drco(){
     double DRCO=1500;
 
     //El valor debe estar dentro del intervalo
-    while(DRCO > 1380 || DRCO < 3){
+    while(DRCO > 540 || DRCO < 60){
 
         while(R == 0 || R == 1){  //no puede ser 0 o 1
             R = generarRandom();
         } 
             //valores en 200-400
-        DRCO = 716.22*pow( pow(1/R, 10.01001001) - 1, -0.136592274);
+        DRCO = 721.87/-1.8397 * (pow((1-R), 1.8397) -1) + 109.37; //gen_pareto
 
         R=0;//reinicio el random
     }
@@ -83,18 +79,17 @@ double drco(){
 //REPARACION MANTENIMIENTO
 double drpm(){
     double R=1;
-    double DRPM=1500;
+    double DRPM=540;
 
     //El valor debe estar dentro del intervalo
-    while(DRPM > 1440 || DRPM < 2){
+    while(DRPM > 540 || DRPM < 30){
 
-        while(R == 1){  //no puede ser 1
+        while(R == 1 || R==0){  //no puede ser 1
             R = generarRandom();
         } 
 
             //valores en 9-300
-        DRPM = 9.1726*pow((pow((1-R), -4.77486511)-1), 0.2820317568) + 0.1876;
-        
+        DRPM = 291.68 * (pow((1/R - 1), -0.29906)) -60.215 ; //log-logistic
         R=1;//reinicio el random
     }
 
@@ -146,10 +141,10 @@ int empleadoDisponible(){
 
 int duracionAverio(){
     double random = generarRandom();
-    if (random <= 0.8){
+    if (random <= 0.64){
         return drbd();
     } else {
-        if(random <= 0.93){
+       if(random <= 0.81){
             return drpm();
         }
         else {
