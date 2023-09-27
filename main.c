@@ -55,6 +55,8 @@ int main()
     float stop = 0;
 
 
+    printf("%i empleados de mantenimiento\n",pmd);
+
     printf("TF: %u \n", tf);
     printf("T: %u \n", t);
     for (int i = 0; i < pmd; i++)
@@ -65,6 +67,7 @@ int main()
     printf("Promedio de tiempo ocioso promedio (PTOP) : %f\n", stop/pmd*100/t);
     printf("Promedio de tiempo de espera por reparacion (PTER) : %u\n", ster/ca);
     printf("Promedio de tiempo de averio de las maquinas (PTA) : %u\n", sta/ca);
+    
     line();
 
     return 0;
