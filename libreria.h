@@ -39,7 +39,7 @@ double ia(){
 double drbd(){
 
     double R=1;
-    double DRBD=0;
+    double DRBD=-1;
 
     //El valor debe estar dentro del intervalo
     while(DRBD > 900 || DRBD < 30){
@@ -57,7 +57,7 @@ double drbd(){
 double drco(){
     
     double R=1;
-    double DRCO=1500;
+    double DRCO=-1;
 
     //El valor debe estar dentro del intervalo
     while(DRCO > 540 || DRCO < 60){
@@ -76,7 +76,7 @@ double drco(){
 //REPARACION MANTENIMIENTO
 double drpm(){
     double R=1;
-    double DRPM=540;
+    double DRPM=-1;
 
     //El valor debe estar dentro del intervalo
     while(DRPM > 540 || DRPM < 30){
