@@ -64,7 +64,7 @@ int main()
         stop += sto[i];
     }
 
-    printf("Promedio de tiempo ocioso promedio (PTOP) : %f\n", stop/pmd*100/t);
+    printf("Porcentaje de tiempo ocioso promedio (PTOP) : %f\n", stop/pmd*100/t);
     printf("Promedio de tiempo de espera por reparacion (PTER) : %u\n", ster/ca);
     printf("Promedio de tiempo de averio de las maquinas (PTA) : %u\n", sta/ca);
     
