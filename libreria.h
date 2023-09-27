@@ -28,11 +28,10 @@ double ia(){
     while(IA > 695|| IA < 0){
         while(R == 1){  //no puede ser 1
             R = generarRandom();
-        }   //la cuenta esta acotada en los valores reales, aprox 20-200
+        }  
         IA = 67.373/0.32084*(pow((1-R),-0.32084)-1) - 15.465; //gen_pareto
         R = 1; //reinicio el random
     }
-    printf("IA: %lf\n", IA);
     return IA;
 }
 
@@ -51,7 +50,6 @@ double drbd(){
         DRBD = -2219.3 + 2715.4*pow((pow(R,(-1/0.13863))-1),(-1/112.01)); //dagum 4p
         R=1;//reinicio el random
     }
-    printf("DRBD: %lf\n", DRBD);
     return DRBD;
 }
 
@@ -67,7 +65,6 @@ double drco(){
         while(R == 0 || R == 1){  //no puede ser 0 o 1
             R = generarRandom();
         } 
-            //valores en 200-400
         DRCO = 721.87/-1.8397 * (pow((1-R), 1.8397) -1) + 109.37; //gen_pareto
 
         R=0;//reinicio el random
@@ -88,7 +85,6 @@ double drpm(){
             R = generarRandom();
         } 
 
-            //valores en 9-300
         DRPM = 291.68 * (pow((1/R - 1), -0.29906)) -60.215 ; //log-logistic
         R=1;//reinicio el random
     }
@@ -144,7 +140,7 @@ int duracionAverio(){
     if (random <= 0.64){
         return drbd();
     } else {
-       if(random <= 0.81){
+        if(random <= 0.81){
             return drpm();
         }
         else {

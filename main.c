@@ -4,9 +4,8 @@
 
 int main()
 {
-    //pedirTF();
+    pedirTF();
     pedirPMD();
-    tf = 43200 * 12;
     line();
 
     inicializarTC();
@@ -53,14 +52,17 @@ int main()
         }
     }
 
+    float stop = 0;
+
 
     printf("TF: %u \n", tf);
     printf("T: %u \n", t);
     for (int i = 0; i < pmd; i++)
     {
-        printf("Porcentaje de tiempo ocioso (PTO) : %f\n", (sto[i]*100/t));
+        stop += sto[i];
     }
-    
+
+    printf("Promedio de tiempo ocioso promedio (PTOP) : %f\n", stop/pmd*100/t);
     printf("Promedio de tiempo de espera por reparacion (PTER) : %u\n", ster/ca);
     printf("Promedio de tiempo de averio de las maquinas (PTA) : %u\n", sta/ca);
     line();
